@@ -1,0 +1,107 @@
+<div class="toolbar" role="banner">
+    <img
+      width="40"
+      alt="Angular Logo"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+    />
+    <span>Welcome</span>
+  </div>
+  
+<div class="content" role="main">
+    <h2>{{mode}} Project Proposal Form</h2>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <table style="width: 102%;" >
+        <tr>
+            <td>
+                <label class="label" for="first-name">First Name: </label>
+                <input matInput id="first-name" type="text" [(ngModel)]="firstName" formControlName="firstName">
+            </td>
+            <td>
+                <label class="label" for="last-name">Last Name: </label>
+                <input matInput id="last-name" type="text" [(ngModel)]="lastName" formControlName="lastName">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="label" for="email">Email: </label>
+                <input matInput id="email" type="text" [(ngModel)]="email" formControlName="email">
+            </td>
+            <td>
+                <label class="label" for="phone">Phone: </label>
+                <input matInput id="phone" type="text" [(ngModel)]="phone" formControlName="phone">
+                
+            </td>    
+        </tr>
+        <tr>   
+            <td> 
+                <label for="jobTitle">Job Title: </label>
+                <input class="widthStyle" matInput id="jobTitle" type="text" [(ngModel)]="jobTitle" formControlName="jobTitle">
+            </td>  
+        </tr> 
+        <tr>
+            <td>
+                <label for="projectTitle">ProjectTitle: </label>
+                <input class="widthStyle" matInput id="projectTitle" type="text"  [(ngModel)]="projectTitle" formControlName="projectTitle">
+            </td>
+            
+        </tr>
+    
+        <div class="panel panel-default" formGroupName="organizationAddress"> 
+        <tr><td><strong>Organization Address: </strong></td></tr>
+        <tr>
+            <td>
+                <label class="label" for="street">Street: </label>
+                <input matInput id="street" type="text" [(ngModel)]="street" formControlName="street">
+            </td>
+            <td>
+                <label class="label" for="city">City: </label>
+                <input matInput id="city" type="text"  [(ngModel)]="city" formControlName="city">
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                <label class="label" for="state">State: </label>
+                <input matInput id="state" type="text" [(ngModel)]="state" formControlName="state">
+            </td>
+            <td>
+                <label class="label" for="zip">Zip: </label>
+                <input matInput id="zip" type="number" [(ngModel)]="zip" formControlName="zip" (change)="getCityByZip('zip')">
+            </td>
+        </tr>
+        </div>
+        <tr>   
+            <td> 
+                <label for="descriptionOfProject">Description Of Project: </label>
+                <input class="widthStyle" matInput id="descriptionOfProject" type="text" [(ngModel)]="descriptionOfProject" formControlName="descriptionOfProject">
+            </td>  
+        </tr> 
+        <tr>
+            <td>
+                <label for="technicalSkillsRequired">Technical Skills Required: </label>
+                <input class="widthStyle" matInput id="technicalSkillsRequired" type="text" [(ngModel)]="technicalSkillsRequired" formControlName="technicalSkillsRequired">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+    
+          
+    
+        
+      
+        
+     
+       
+    
+      
+        
+    
+    
+    
+    
+    

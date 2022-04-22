@@ -1,0 +1,112 @@
+<!--<div>
+    <audio id="song">
+        <source src="../assets/song.ogg" type="audio/ogg">
+        <source src="../assets/song.mp3" type="audio/mpeg">
+        Please use different browser to play the audio
+      </audio>
+      <img class="song" src="../assets/song.png" onClick="playAndPauseSong();" />
+</div>-->
+
+
+<form style="display: none;" id="login_screen" class="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">       
+    <div>
+        <img class="logoImage" src="../assets/Tune-In-logos_black.png" alt="Logo">
+    </div>
+    <div>
+        <label for="userName"><b>Username : </b></label>
+        <input class = "loginFormLabel" type="text" name="userName" required>
+
+        <label for="password"><b>Password : </b></label>
+        <input class = "loginFormLabel" type="password" name="password" required>
+
+        <button class="loginButton" type="submit">Login</button>
+    </div>
+    <div>
+        <span><a href="#"> Forgot password?</a></span>
+    </div>
+    <hr class = "seperateSection">
+    <div>
+        <p class = "signUpText" ><strong>Don't have an account ?</strong></p>              
+        <button onclick="document.getElementById('login_screen').style.display = 'none'; document.getElementById('registration_form').style.display = 'block';"  class="signupButton" type="submit">Sign-Up for Tune-In</button>
+    </div>
+</form>
+
+<form style="display: none;" id="registration_form" class="registrationForm" [formGroup]="registrationForm">
+    <div>
+        <h2 style="margin-left: 26%;">Registration Form</h2>
+        <label for="r_userName"><b>Username : </b></label>
+        <input class = "registrationFormLabel" type="text" name="r_userName" required>
+
+        <label for="r_email"><b>Email : </b></label>
+        <input class = "registrationFormLabel" type="text" name="r_email" required>
+        
+        <label for="r_password"><b>Password : </b></label>
+        <input class = "registrationFormLabel" type="password" name="r_password" required>
+
+        <label for="r_confirmpassword"><b>Confirm Password : </b></label>
+        <input class = "registrationFormLabel" type="password" name="r_confirmpassword" required>
+    </div>
+    <div>
+        <button class="registrationBtn" type="submit">Register</button>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<form class="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <table>
+        <tr>
+            <td><tr><td><label class="loginFormLabel" for="userName">User Name:</label></td>\
+        </tr>
+        <tr>
+            <td><input class="loginFormTextField" id="user_name" type="text" formControlName="userName"></td></tr></td>
+        </tr>
+
+        <tr>
+            <td>
+                <tr>
+                    <td>
+                        <label class="loginFormLabel" for="password">Password:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="loginFormTextField" id="password" type="text" formControlName="password">
+                    </td>
+                </tr>
+            </td>
+        </tr>
+        <tr><td><button class="loginButton" type="submit" disabled="!loginForm.valid">Login</button></td></tr>
+        <tr><td><span class="forgotpsw"><a href="#"> Forgot password?</a></span></td></tr>
+        <hr class = "seperatesection">
+          <tr class="container">
+              <td class = "signUpText" >Don't have an account?</td>              
+              <td><button type="submit">Sign-Up for Tune-In</button></td>
+          </tr>
+    </table>
+</form>-->
+
+
+
+
