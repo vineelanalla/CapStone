@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CapstoneService } from '../capstone.service';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-list-projects',
@@ -9,7 +10,7 @@ import { CapstoneService } from '../capstone.service';
 export class ListProjectsComponent implements OnInit {
 
   public users: any;
-  constructor(private _myService: CapstoneService) { }
+  constructor(private _myService: UsersService) { }
   ngOnInit() {
       this.getUsers();
   }
@@ -23,5 +24,7 @@ export class ListProjectsComponent implements OnInit {
   onDelete(userId: string) {
     this._myService.deleteUser(userId);
 }
+
+
 
 }

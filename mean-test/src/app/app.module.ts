@@ -19,6 +19,7 @@ import { SubscriptionsComponent } from './tune-in/components/subscriptions/subsc
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CapstoneService } from './capstone.service';
+import { UsersService } from './users.service';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -94,7 +95,7 @@ const appRoutes: Routes = [ {
     MatMenuModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [CapstoneService],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

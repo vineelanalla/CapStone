@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import {CapstoneService} from '../capstone.service';
+import { UsersService } from '../users.service';
 import {Router} from '@angular/router';
 import {ActivatedRoute, ParamMap } from '@angular/router';
 
@@ -28,7 +29,7 @@ export class CapstoneComponent implements OnInit {
   public mode = 'Add'; 
   private id: any;
   private user: any;
-  constructor(private _myService: CapstoneService, private router:Router, public route: ActivatedRoute) { }
+  constructor(private _myService: UsersService, private router:Router, public route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap: ParamMap ) => {
