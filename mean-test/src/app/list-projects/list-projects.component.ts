@@ -8,20 +8,20 @@ import { CapstoneService } from '../capstone.service';
 })
 export class ListProjectsComponent implements OnInit {
 
-  public projects: any;
+  public users: any;
   constructor(private _myService: CapstoneService) { }
   ngOnInit() {
-      this.getProjects();
+      this.getUsers();
   }
-  getProjects() {
-      this._myService.getProjects().subscribe(
-          data => { this.projects = data},
+  getUsers() {
+      this._myService.getUsers().subscribe(
+          data => { this.users = data},
           err => console.error(err),
           () => console.log('finished loading')
       );
   }
-  onDelete(projectId: string) {
-    this._myService.deleteProject(projectId);
+  onDelete(userId: string) {
+    this._myService.deleteUser(userId);
 }
 
 }

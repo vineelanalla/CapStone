@@ -27,7 +27,7 @@ export class CapstoneComponent implements OnInit {
   @Input() technicalSkillsRequired:  string = "";
   public mode = 'Add'; 
   private id: any;
-  private project: any;
+  private user: any;
   constructor(private _myService: CapstoneService, private router:Router, public route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -36,21 +36,21 @@ export class CapstoneComponent implements OnInit {
             this.mode = 'Edit'; 
             this.id = paramMap.get('_id');
 
-            this._myService.getProject(this.id).subscribe(
+            this._myService.getUser(this.id).subscribe(
                 data => { 
-                    this.project = data;
-                    this.firstName = this.project.firstName;
-                    this.lastName = this.project.lastName;
-                    this.jobTitle= this.project.jobTitle;
-                    this.email= this.project.email;
-                    this.phone= this.project.phone;
-                    this.street= this.project.street;
-                    this.city= this.project.city;
-                    this.state= this.project.state;
-                    this.zip= this.project.zip;
-                    this.projectTitle= this.project.projectTitle;
-                    this.descriptionOfProject= this.project.descriptionOfProject;
-                    this.technicalSkillsRequired= this.project.technicalSkillsRequired;
+                    this.user = data;
+                    this.firstName = this.user.firstName;
+                    this.lastName = this.user.lastName;
+                    this.jobTitle= this.user.jobTitle;
+                    this.email= this.user.email;
+                    this.phone= this.user.phone;
+                    this.street= this.user.street;
+                    this.city= this.user.city;
+                    this.state= this.user.state;
+                    this.zip= this.user.zip;
+                    this.projectTitle= this.user.projectTitle;
+                    this.descriptionOfProject= this.user.descriptionOfProject;
+                    this.technicalSkillsRequired= this.user.technicalSkillsRequired;
                 },
                 err => console.error(err),
                 () => console.log('finished loading')
@@ -84,10 +84,10 @@ export class CapstoneComponent implements OnInit {
     console.log("You submitted: " + this.firstName + " " + this.lastName);
     //this._myService.addProjects(this.firstName ,this.lastName, this.email, this.phone, this.jobTitle,this.projectTitle,this.street,this.city,this.state,this.zip,this.descriptionOfProject,this.technicalSkillsRequired);
     if (this.mode == 'Add')
-    this._myService.addProjects(this.firstName ,this.lastName, this.email, this.phone, this.jobTitle,this.projectTitle,this.street,this.city,this.state,this.zip,this.descriptionOfProject,this.technicalSkillsRequired);
+    this._myService.addUsers(this.firstName ,this.lastName, this.email, this.phone, this.jobTitle,this.projectTitle,this.street,this.city,this.state,this.zip,this.descriptionOfProject,this.technicalSkillsRequired);
     if (this.mode == 'Edit')
-    this._myService.updateProject(this.id,this.firstName ,this.lastName, this.email, this.phone, this.jobTitle,this.projectTitle,this.street,this.city,this.state,this.zip,this.descriptionOfProject,this.technicalSkillsRequired);
-    this.router.navigate(['/listProjects']);
+    this._myService.updateUser(this.id,this.firstName ,this.lastName, this.email, this.phone, this.jobTitle,this.projectTitle,this.street,this.city,this.state,this.zip,this.descriptionOfProject,this.technicalSkillsRequired);
+    this.router.navigate(['/listUsers']);
   }
   
   getCityByZip(zip: string) {

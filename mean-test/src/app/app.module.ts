@@ -28,6 +28,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { Routes, RouterModule } from '@angular/router';
 import { ListProjectsComponent } from './list-projects/list-projects.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -36,16 +37,21 @@ const appRoutes: Routes = [ {
   component: NameEditorComponent
 },
 {
-  path: 'addProject',   
+  path: 'RegisterUser',   
   component: CapstoneComponent
 },
  {
-  path: 'listProjects',  
+  path: 'listUsers',  
   component: ListProjectsComponent
 }, {
-  path: 'editProject/:_id',  
+  path: 'editUser/:_id',  
   component: CapstoneComponent 
-},{
+},
+{
+  path: 'login',  
+  component: TuneInComponent 
+},
+{
   path: '**',  
   component: NotFoundComponent
 }
@@ -71,6 +77,7 @@ const appRoutes: Routes = [ {
     NavigationMenuComponent,
     ListProjectsComponent,
     NotFoundComponent,
+    UsersComponent,
 
   ],
   imports: [

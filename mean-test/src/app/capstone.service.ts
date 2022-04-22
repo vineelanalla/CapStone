@@ -9,10 +9,10 @@ export class CapstoneService {
 
     constructor(private http:HttpClient) {}
 
-    getProjects() {
-        return this.http.get('http://localhost:8000/projects');
+    getUsers() {
+        return this.http.get('http://localhost:8000/users');
     }
-    addProjects(firstName: string, lastName: string, email:  string,
+    addUsers(firstName: string, lastName: string, email:  string,
         phone:  string,
         jobTitle:  string,
         projectTitle:  string,
@@ -22,20 +22,20 @@ export class CapstoneService {
         zip:  string,
         descriptionOfProject:  string,
         technicalSkillsRequired:  string,) {
-         this.http.post('http://localhost:8000/projects',{ firstName, lastName, email, phone, jobTitle,projectTitle,street,
+         this.http.post('http://localhost:8000/users',{ firstName, lastName, email, phone, jobTitle,projectTitle,street,
         city,state,zip,descriptionOfProject,technicalSkillsRequired })
         .subscribe((responseData) => {
             console.log(responseData);
         }); 
     }
-    deleteProject(projectId: string) {
-        this.http.delete("http://localhost:8000/projects/" + projectId)
+    deleteUser(userId: string) {
+        this.http.delete("http://localhost:8000/users/" + userId)
             .subscribe(() => {
-                console.log('Deleted: ' + projectId);
+                console.log('Deleted: ' + userId);
             });
             location.reload();
     }
-    updateProject(projectId: string,firstName: string, lastName: string, email:  string,
+    updateUser(userId: string,firstName: string, lastName: string, email:  string,
         phone:  string,
         jobTitle:  string,
         projectTitle:  string,
@@ -45,15 +45,15 @@ export class CapstoneService {
         zip:  string,
         descriptionOfProject:  string,
         technicalSkillsRequired:  string) {
-        this.http.put("http://localhost:8000/projects/" + 
-        projectId,{ firstName, lastName, email, phone, jobTitle,projectTitle,street,
+        this.http.put("http://localhost:8000/users/" + 
+        userId,{ firstName, lastName, email, phone, jobTitle,projectTitle,street,
             city,state,zip,descriptionOfProject,technicalSkillsRequired })
         .subscribe(() => {
-            console.log('Updated: ' + projectId);
+            console.log('Updated: ' + userId);
         });
     }
-    getProject(projectId: string) {
-        return this.http.get('http://localhost:8000/projects/'+ projectId);
+    getUser(userId: string) {
+        return this.http.get('http://localhost:8000/users/'+ userId);
       }
       
              

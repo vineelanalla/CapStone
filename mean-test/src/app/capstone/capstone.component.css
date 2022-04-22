@@ -1,55 +1,76 @@
-.label{
-    float: left;
-    text-align: right;
-    margin-right: 53%;
+.loginForm {
+  width: 52%;
+  margin-left: 26%;
 }
-.widthStyle{
-    width: 139%;
+
+.loginFormLabel {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
 }
-:host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
+.loginButton {
+  background-color: #63C4ED;
+  color: white;
+  text-decoration: solid;
+  padding: 12px 21px;
+  margin: 2% 0 0 76%;
+  width: 24%;
+}
+.signupButton {
+  background-color: #63C4ED;
+  color: white;
+  text-decoration: solid;
+  padding: 16px 22px;
+  margin: 8px 0;
+  width: 100%;
+} 
+.seperateSection
+{
+margin: 12px 0px 20px;
+flex: 1 1 0%;
+}
+.signUpText
+{
+padding: 15px 21px;
+text-align: center;
+}
+.logoImage {
+width: 46%;
+margin-left: 26%;
+margin-top: 6%;
+}
 
-  p {
-    margin: 0;
-  }
+.registrationForm{
+margin-top: 10%;  
+margin-left: 20%;
+}
 
-  .spacer {
-    flex: 1;
-  }
+.registrationFormLabel{
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+box-sizing: border-box;
+}
 
-.toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
+.registrationLogoImage{
+width: 20%;
+margin-left: 26%;
+}
 
-  .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
+.registrationBtn{
+background-color: #63C4ED;
+color: white;
+text-decoration: solid;
+padding: 16px 22px;
+margin: 8px 0;
+width: 100%;
+}
+
+.song{
+margin-left: 46%;
+margin-top: 10%;
+}
