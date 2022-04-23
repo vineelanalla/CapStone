@@ -12,18 +12,20 @@ export class UsersService {
     getUsers() {
         return this.http.get('http://localhost:8000/users');
     }
-    addUsers(firstName: string, lastName: string, email:  string,
-        phone:  string,
-        jobTitle:  string,
-        projectTitle:  string,
-        street:  string,
-        city:  string,
-        state:  string,
-        zip:  string,
-        descriptionOfProject:  string,
-        technicalSkillsRequired:  string,) {
-         this.http.post('http://localhost:8000/users',{ firstName, lastName, email, phone, jobTitle,projectTitle,street,
-        city,state,zip,descriptionOfProject,technicalSkillsRequired })
+    addUsers(firstName: string, lastName: string, email:  string, password: string,)
+    {
+        // phone:  string,
+        // jobTitle:  string,
+        // projectTitle:  string,
+        // street:  string,
+        // city:  string,
+        // state:  string,
+        // zip:  string,
+        // descriptionOfProject:  string,
+        // technicalSkillsRequired:  string,) {
+        //  this.http.post('http://localhost:8000/users',{ firstName, lastName, email, phone, jobTitle,projectTitle,street,
+        // city,state,zip,descriptionOfProject,technicalSkillsRequired })
+        this.http.post('http://localhost:8000/users',{ firstName, lastName, email, password})
         .subscribe((responseData) => {
             console.log(responseData);
         }); 
@@ -35,19 +37,22 @@ export class UsersService {
             });
             location.reload();
     }
-    updateUser(userId: string,firstName: string, lastName: string, email:  string,
-        phone:  string,
-        jobTitle:  string,
-        projectTitle:  string,
-        street:  string,
-        city:  string,
-        state:  string,
-        zip:  string,
-        descriptionOfProject:  string,
-        technicalSkillsRequired:  string) {
+    updateUser(userId: string,firstName: string, lastName: string, email:  string, password: string)
+    {
+        // phone:  string,
+        // jobTitle:  string,
+        // projectTitle:  string,
+        // street:  string,
+        // city:  string,
+        // state:  string,
+        // zip:  string,
+        // descriptionOfProject:  string,
+        // technicalSkillsRequired:  string) {
+        // this.http.put("http://localhost:8000/users/" + 
+        // userId,{ firstName, lastName, email, phone, jobTitle,projectTitle,street,
+        //     city,state,zip,descriptionOfProject,technicalSkillsRequired })
         this.http.put("http://localhost:8000/users/" + 
-        userId,{ firstName, lastName, email, phone, jobTitle,projectTitle,street,
-            city,state,zip,descriptionOfProject,technicalSkillsRequired })
+        userId,{ firstName, lastName, email, password })
         .subscribe(() => {
             console.log('Updated: ' + userId);
         });

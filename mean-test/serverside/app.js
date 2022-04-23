@@ -17,6 +17,7 @@ app.use((req, res, next) => {
 });
 
 
+
 app.get('/users', (req, res, next) => {
     users.find() 
     .then(data => res.status(200).json(data))
@@ -35,15 +36,7 @@ app.post('/users', (req, res, next) => {
     firstName: req.body.firstName,
     lastName:  req.body.lastName,
     email:  req.body.email,
-    phone:  req.body.phone,
-    jobTitle:  req.body.jobTitle,
-    projectTitle:  req.body.projectTitle,
-    street:  req.body.street,
-    city:  req.body.city,
-    state:  req.body.state,
-    zip:  req.body.zip,
-    descriptionOfProject:  req.body.descriptionOfProject,
-    technicalSkillsRequired:  req.body.technicalSkillsRequired,
+    password: req.body.password,
     });
     Users.save()
         .then(() => { console.log('Success');})
@@ -66,15 +59,7 @@ app.put('/users/:id', (req, res, next) => {
                 firstName : req.body.firstName, 
                 lastName : req.body.lastName,
                 email:  req.body.email,
-                phone:  req.body.phone,
-                jobTitle:  req.body.jobTitle,
-                projectTitle:  req.body.projectTitle,
-                street:  req.body.street,
-                city:  req.body.city,
-                state:  req.body.state,
-                zip:  req.body.zip,
-                descriptionOfProject:  req.body.descriptionOfProject,
-                technicalSkillsRequired:  req.body.technicalSkillsRequired,
+                password: req.body.password,
             }}, 
             {new:true} 
         ) 

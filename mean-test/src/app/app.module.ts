@@ -28,27 +28,22 @@ import { UsersComponent } from './users/users.component';
 const appRoutes: Routes = [ {
   path: '',  //default component to display
   component: UsersComponent
-},
-{
+},{
   path: 'RegisterUser',   
   component: UsersComponent
-},
- {
+},{
   path: 'listUsers',  
   component: ListProjectsComponent
 }, {
   path: 'editUser/:_id',  
   component: UsersComponent 
-},
-{
+},{
   path: 'login',  
   component: TuneInComponent 
-},
-{
+},{
   path: '**',  
   component: NotFoundComponent
-}
-];
+}];
 
 
 

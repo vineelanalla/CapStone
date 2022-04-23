@@ -16,15 +16,7 @@ export class UsersComponent implements OnInit {
   @Input() firstName: string = "";
   @Input() lastName: string = "";
   @Input() email:  string = "";
-  @Input()  phone:  string = "";
-  @Input() jobTitle:  string = "";
-  @Input() projectTitle:  string = "";
-  @Input() street:  string = "";
-  @Input() city:  string = "";
-  @Input() state:  string = "";
-  @Input() zip:  string = "";
-  @Input() descriptionOfProject:  string = "";
-  @Input() technicalSkillsRequired:  string = "";
+  @Input() password:  string = "";
   public mode = 'Add'; 
   private id: any;
   private user: any;
@@ -41,16 +33,8 @@ export class UsersComponent implements OnInit {
                     this.user = data;
                     this.firstName = this.user.firstName;
                     this.lastName = this.user.lastName;
-                    this.jobTitle= this.user.jobTitle;
                     this.email= this.user.email;
-                    this.phone= this.user.phone;
-                    this.street= this.user.street;
-                    this.city= this.user.city;
-                    this.state= this.user.state;
-                    this.zip= this.user.zip;
-                    this.projectTitle= this.user.projectTitle;
-                    this.descriptionOfProject= this.user.descriptionOfProject;
-                    this.technicalSkillsRequired= this.user.technicalSkillsRequired;
+                    this.password = this.user.password
                 },
                 err => console.error(err),
                 () => console.log('finished loading')
@@ -62,66 +46,20 @@ export class UsersComponent implements OnInit {
         }
     });
 }
-  profileForm = new FormGroup(
+  registrationForm = new FormGroup(
     {
     firstName: new FormControl(''),
     lastName: new FormControl(''),
-    jobTitle: new FormControl(''),
     email: new FormControl(''),
-    phone: new FormControl(''),
-    organizationAddress: new FormGroup(
-      {
-      street: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl('')
-    }),
-    projectTitle: new FormControl(''),
-    descriptionOfProject: new FormControl(''),
-    technicalSkillsRequired: new FormControl(''),
+    password: new FormControl(''),
   });
   onSubmit() {
     console.log("You submitted: " + this.firstName + " " + this.lastName);
-    //this._myService.addProjects(this.firstName ,this.lastName, this.email, this.phone, this.jobTitle,this.projectTitle,this.street,this.city,this.state,this.zip,this.descriptionOfProject,this.technicalSkillsRequired);
     if (this.mode == 'Add')
-    this._myService.addUsers(this.firstName ,this.lastName, this.email, this.phone, this.jobTitle,this.projectTitle,this.street,this.city,this.state,this.zip,this.descriptionOfProject,this.technicalSkillsRequired);
+    this._myService.addUsers(this.firstName ,this.lastName, this.email, this.password);
     if (this.mode == 'Edit')
-    this._myService.updateUser(this.id,this.firstName ,this.lastName, this.email, this.phone, this.jobTitle,this.projectTitle,this.street,this.city,this.state,this.zip,this.descriptionOfProject,this.technicalSkillsRequired);
+    this._myService.updateUser(this.id,this.firstName ,this.lastName, this.email, this.password);
     this.router.navigate(['/listUsers']);
-  }
-  
-  getCityByZip(zip: string) {
-    console.log(this);
-    let postal_code=this.profileForm.get('organizationAddress')?.get('zip')?.value;
-    console.log('Postal Code is: '+postal_code);
-    let kennesaw_zipcodes=[30144,30152];
-    let marietta_zipcodes=[30060,30061,300062,30063,30064,30065,30066,30067,30068,30069];
-    let woodstock_zipcodes=[30188,30189];
-    if(kennesaw_zipcodes.includes(postal_code))
-    {    
-      this.profileForm.patchValue({
-        organizationAddress: {
-          city: 'Kennesaw'
-        }
-      });
-    }
-    else if(marietta_zipcodes.includes(postal_code))
-    {    
-      this.profileForm.patchValue({
-        organizationAddress: {
-          city: 'Marietta'
-        }
-      });
-    }
-    else if(woodstock_zipcodes.includes(postal_code))
-    {    
-      this.profileForm.patchValue({
-        organizationAddress: {
-          city: 'WoodStock'
-        }
-      });
-    }
-    
   }
   
 }
