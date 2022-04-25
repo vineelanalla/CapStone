@@ -6,14 +6,12 @@ import { UsersService } from '../users.service';
 import {Router} from '@angular/router';
 import {ActivatedRoute, ParamMap } from '@angular/router';
 
-
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-useredit',
+  templateUrl: './useredit.component.html',
+  styleUrls: ['./useredit.component.css']
 })
-
-export class UsersComponent implements OnInit {
+export class UsereditComponent implements OnInit {
   @Input() firstName: string = "";
   @Input() lastName: string = "";
   @Input() email:  string = "";
@@ -47,28 +45,28 @@ export class UsersComponent implements OnInit {
         }
     });
 }
-registrationForm = new FormGroup(
-  {
-  firstName: new FormControl(''),
-  lastName: new FormControl(''),
-  email: new FormControl(''),
-  password: new FormControl(''),
-});
-onSubmit() {
-  console.log("You submitted: " + this.firstName + " " + this.lastName);
-  if (this.mode == 'Add')
-  this._myService.addUsers(this.firstName ,this.lastName, this.email, this.password);
-  if (this.mode == 'Edit')
-  this._myService.updateUser(this.id,this.firstName ,this.lastName, this.email, this.password);
-  //this.router.navigate(['/listUsers']);
-  this.router.navigate(['/Open']);
-}
 
-loginForm = new FormGroup(
-{
-  userName: new FormControl(''),
-  password: new FormControl('')
-});
-
+  registrationForm = new FormGroup(
+    {
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
+  onSubmit() {
+    console.log("You submitted: " + this.firstName + " " + this.lastName);
+    if (this.mode == 'Add')
+    this._myService.addUsers(this.firstName ,this.lastName, this.email, this.password);
+    if (this.mode == 'Edit')
+    this._myService.updateUser(this.id,this.firstName ,this.lastName, this.email, this.password);
+    //this.router.navigate(['/listUsers']);
+    this.router.navigate(['/Open']);
+  }
   
+  loginForm = new FormGroup(
+  {
+    userName: new FormControl(''),
+    password: new FormControl('')
+  });
+
 }

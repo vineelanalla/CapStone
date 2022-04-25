@@ -24,8 +24,8 @@
     color: white;
     text-decoration: solid;
     padding: 16px 22px;
-    margin: 8px 0;
-    width: 100%;
+    margin: 0 0 0 26%;
+    width: 52%;
   } 
   .seperateSection
   {
@@ -38,13 +38,12 @@
   text-align: center;
   }
   .logoImage {
-  width: 46%;
-  margin-left: 26%;
-  margin-top: 6%;
+    width: 14%;
+    margin-left: 44%;
+    margin-top: 4%;
   }
   
   .registrationForm{
-  margin-top: 10%;  
   margin-left: 20%;
   }
   

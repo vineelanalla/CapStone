@@ -2,7 +2,7 @@
     width: 52%;
     margin-left: 26%;
   }
-
+  
   .loginFormLabel {
     width: 100%;
     padding: 12px 20px;
@@ -11,7 +11,7 @@
     box-sizing: border-box;
   }
   
-.loginButton {
+  .loginButton {
     background-color: #63C4ED;
     color: white;
     text-decoration: solid;
@@ -19,58 +19,57 @@
     margin: 2% 0 0 76%;
     width: 24%;
   }
-.signupButton {
+  .signupButton {
     background-color: #63C4ED;
     color: white;
     text-decoration: solid;
     padding: 16px 22px;
-    margin: 8px 0;
-    width: 100%;
+    margin: 0 0 0 26%;
+    width: 52%;
   } 
-.seperateSection
-{
+  .seperateSection
+  {
   margin: 12px 0px 20px;
   flex: 1 1 0%;
-}
-.signUpText
-{
+  }
+  .signUpText
+  {
   padding: 15px 21px;
   text-align: center;
-}
-.logoImage {
-  width: 46%;
-  margin-left: 26%;
-  margin-top: 6%;
-}
-
-.registrationForm{
-  margin-top: 10%;  
+  }
+  .logoImage {
+    width: 14%;
+    margin-left: 44%;
+    margin-top: 4%;
+  }
+  
+  .registrationForm{
   margin-left: 20%;
-}
-
-.registrationFormLabel{
+  }
+  
+  .registrationFormLabel{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   box-sizing: border-box;
-}
-
-.registrationLogoImage{
+  }
+  
+  .registrationLogoImage{
   width: 20%;
   margin-left: 26%;
-}
-
-.registrationBtn{
+  }
+  
+  .registrationBtn{
   background-color: #63C4ED;
   color: white;
   text-decoration: solid;
   padding: 16px 22px;
   margin: 8px 0;
   width: 100%;
-}
-
-.song{
+  }
+  
+  .song{
   margin-left: 46%;
   margin-top: 10%;
-}
+  }

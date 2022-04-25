@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TuneInComponent } from './tune-in.component';
+import { TuneinComponent } from './tunein.component';
 
-describe('TuneInComponent', () => {
-  let component: TuneInComponent;
-  let fixture: ComponentFixture<TuneInComponent>;
+describe('TuneinComponent', () => {
+  let component: TuneinComponent;
+  let fixture: ComponentFixture<TuneinComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TuneInComponent ]
+      declarations: [ TuneinComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TuneInComponent);
+    fixture = TestBed.createComponent(TuneinComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
