@@ -21,6 +21,7 @@ import { PlaylistsComponent } from './playlists/playlists.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
 import { UsereditComponent } from './useredit/useredit.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [ {
   path: '',  //default component to display  
@@ -48,6 +49,10 @@ const appRoutes: Routes = [ {
   component: PlaylistsComponent 
 },
 {
+  path: 'myProfile',  
+  component: ProfileComponent 
+},
+{
   path: '**',  
   component: NotFoundComponent
 }];
@@ -63,6 +68,7 @@ const appRoutes: Routes = [ {
     ReviewsComponent,
     SubscriptionsComponent,
     UsereditComponent,
+    ProfileComponent,
 
   ],
   imports: [

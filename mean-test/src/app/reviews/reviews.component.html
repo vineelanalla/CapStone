@@ -1,4 +1,4 @@
-<div class="sideNavBar">
+<!-- <div class="sideNavBar">
     <a href="/Open">Home</a>
     <a href="/playlists">Playlists</a>
     <a href="/subscriptions">Subscription</a>
@@ -8,3 +8,101 @@
 <div class="content">
     <h1>reviews works!</h1>
 </div>
+ -->
+<!-- <div class="sideNavBar"> 
+    <a href="/Open">Home</a>
+    <a href="/playlists">Playlists</a>
+    <a href="/subscriptions">Subscription</a>
+    <a href="/reviews">Reviews</a>
+</div> -->
+
+<!-- <div class="content">
+    <h1 id="fh2">WE APPRECIATE YOUR REVIEW!</h1>
+    <h6 id="fh6">Your review will help us to ensure a top quality customer service to all of our users.</h6>
+    
+    
+    <form id="feedback" action="">
+      <div class="pinfo">Enter your personal information</div>
+      
+    <div class="form-group">
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-user"></i></span>
+      <input  name="name" placeholder="Praseeda" class="form-control"  type="text">
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        <input name="email" type="email" class="form-control" placeholder="Praseeda@email.com">
+         </div>
+      </div>
+    </div>
+    
+     <div class="form-group">
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+      <input  name="URL" placeholder="https://google.com" class="form-control"  type="url">
+        </div>
+      </div>
+    </div>
+     -->
+     <!-- <div class="pinfo">Rate our overall services</div>
+      
+    
+    <div class="form-group">
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-heart"></i></span>
+       <select class="form-control" id="rate">
+          <option value="1star">1 (Poor)</option>
+          <option value="2stars">2 (Fair)</option>
+          <option value="3stars">3 (Satisfactory)</option>
+          <option value="4stars">4 (Good)</option>
+          <option value="5stars">5 (Excellent)</option>
+        </select>
+        </div>
+      </div>
+    </div>
+    
+     <div class="pinfo">Write your feedback</div>
+      
+    
+    <div class="form-group">
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+      <textarea class="form-control" id="review" rows="3"></textarea>
+     
+        </div>
+      </div>
+    </div>
+    
+     <button type="submit" class="btn btn-primary">Submit</button>
+    
+    </form>
+
+    
+</div> --> 
+<form id="feedbackForm" class="feedbackForm" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+    <div>
+        <!-- <h2 style="margin-left: 26%;">Registration Form</h2> -->
+        <label for="first-name"><b>First Name : </b></label>
+        <input matInput id="first-name" class = "feedbackForm" type="text" [(ngModel)]="firstName" formControlName="firstName" required>
+
+        <label for="rate"><b>Last Name : </b></label>
+        <input matInput id="rate" class = "feedbackForm" type="text" [(ngModel)]="rate" formControlName="rate" required>
+
+        <label for="review"><b>Email : </b></label>
+        <input matInput id="email" class = "feedbackForm" type="text" [(ngModel)]="review" formControlName="review" required>
+
+     </div>
+    <div>
+        <button class="registrationBtn" type="submit">Register</button>
+    </div>
+</form>
+
